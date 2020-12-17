@@ -1,6 +1,9 @@
+import { StyledFooter } from './styles'
 
 export default function Footer () {
     return (
-        <div></div>
+        <StyledFooter>
+
+        </StyledFooter>
     )    
 }
