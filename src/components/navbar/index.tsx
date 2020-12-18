@@ -1,13 +1,20 @@
-import { Header } from "./styles";
-import logo from '../../assets/logo.jpg';
-import { LargeContainer } from "../../styles/globalstyles";
+import { Header, HeaderContainer } from "./styles";
+import logo from '../../assets/logo.png';
 
-export default function Navbar () {
+import { Link } from "react-router-dom";
+import UserStatus from "./userStatus";
+
+export default function Navbar() {
     return (
         <Header>
-            <LargeContainer>
-            <img src={logo} alt="logo"/>                
-            </LargeContainer>
+            <HeaderContainer>
+                <div>
+                    <Link to="/login">
+                        <img src={logo} alt="logo" />
+                    </Link>
+                </div>
+                <UserStatus />
+            </HeaderContainer>
         </Header>
-    )    
+    )
 }
