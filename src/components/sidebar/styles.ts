@@ -3,9 +3,10 @@ import styled from 'styled-components';
 export const Aside = styled.aside`
     position: fixed;
     top: 0;
-    width: 400px;
+    width: 300px;
     height: 100%;
-    padding-top: 80px;
+    padding-top: 100px;
+    padding-left: 2rem;
     display: flex;
     flex-direction: column;
     background: #4f4f4f;
