@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { device } from '../../styles/breackpoints';
 
 export const Card = styled.div`
     position: relative;
