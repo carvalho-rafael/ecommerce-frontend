@@ -40,6 +40,7 @@ function Routes() {
             <Switch>
                 <CustomRoute path="/" component={Home} exact />
                 <CustomRoute path="/login" component={Login} />
+                <CustomRoute path="/categoria/:id" component={Home} />
             </Switch>
         </Router>
     )
