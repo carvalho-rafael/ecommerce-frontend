@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Aside } from "./styles";
 
 export default function Sidebar() {
@@ -6,12 +6,12 @@ export default function Sidebar() {
         <Aside>
             <h3>Masculino</h3>
             <ul>
-                <li><Link to={`/categoria/${2}`}>Blusas</Link></li>
+                <li><NavLink to={`/categoria/${2}`}>Blusas</NavLink></li>
                 <li>blusas</li>
             </ul>
             <h3>Feminino</h3>
             <ul>
-                <li><Link to={`/categoria/${5}`}>Calças</Link></li>
+                <li><NavLink to={`/categoria/${5}`}>Calças</NavLink></li>
                 <li>blusas</li>
             </ul>
             <h3>Agenero</h3>

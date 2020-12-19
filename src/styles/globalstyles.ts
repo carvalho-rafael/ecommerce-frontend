@@ -15,6 +15,11 @@ export default createGlobalStyle`
     ol, ul {
 	    list-style: none;
         margin-top: 0;
+        padding: 0;
+    }
+    a {
+        text-decoration: none;
+        color: ${props => props.theme.textDark}
     }
 `
 export const Container = styled.div`

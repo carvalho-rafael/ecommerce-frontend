@@ -9,4 +9,18 @@ export const Aside = styled.aside`
     display: flex;
     flex-direction: column;
     float: left;
+
+    a {
+        display: block;
+        width: 100%;
+        font-size: 24px;
+        padding: .5rem 0;
+        padding-left: 1rem;
+        border-radius: 5px;
+        margin-bottom: .5rem;
+
+        &.active {
+            background: ${props => props.theme.secondary};
+        }
+    }
 `
