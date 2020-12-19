@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 import Navbar from "../components/navbar";
 import Sidebar from "../components/sidebar";
@@ -9,26 +8,19 @@ import ProductCard from "../components/productCard";
 
 import mShirt from '../assets/white-shirt.jpg'
 import wPant from '../assets/women-pant.jpg'
+import bag from '../assets/bag-1.jpg'
 
 interface Products {
     imgUrl: string
 }
 
-interface Params {
-    id: string
-}
 
 export default function Home() {
     const [products, setProducts] = useState<Products[]>();
-    const params = useParams<Params>();
 
     useEffect(() => {
-        if (params.id === '2') {
-            setProducts([{ imgUrl: mShirt }, { imgUrl: mShirt }, { imgUrl: mShirt }, { imgUrl: mShirt },]);
-            return
-        }
-        setProducts([{ imgUrl: wPant }, { imgUrl: wPant }, { imgUrl: wPant }, { imgUrl: wPant },]);
-    }, [params.id])
+        setProducts([{ imgUrl: mShirt }, { imgUrl: wPant }, { imgUrl: bag }, { imgUrl: wPant },]);
+    }, [])
 
     return (
         <>
@@ -36,6 +28,7 @@ export default function Home() {
             <Container>
                 <Sidebar />
                 <Main>
+                    <h1>Lançamentos</h1>
                     {products?.map((product, index) => (
                         <ProductCard key={index} imgUrl={product.imgUrl}></ProductCard>
                     ))}

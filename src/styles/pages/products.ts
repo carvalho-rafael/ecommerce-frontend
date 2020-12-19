@@ -6,7 +6,7 @@ export const Main = styled.main`
     flex-wrap: wrap;
     padding-bottom: 100px;
 
-    h1 {
-        width: 100%;
+    header {
+        width:100%;
     }
 `
