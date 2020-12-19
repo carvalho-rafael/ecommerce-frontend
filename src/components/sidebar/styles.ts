@@ -19,6 +19,9 @@ export const Aside = styled.aside`
         border-radius: 5px;
         margin-bottom: .5rem;
 
+        &:hover {
+            background: ${props => props.theme.secondaryLight};
+        }
         &.active {
             background: ${props => props.theme.secondary};
         }

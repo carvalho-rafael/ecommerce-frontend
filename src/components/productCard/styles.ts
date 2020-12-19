@@ -5,7 +5,8 @@ export const Card = styled.div`
     width: 280px;
     background: #ffffff;
     padding: 1rem;
-    margin-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 15px;
 
     img {

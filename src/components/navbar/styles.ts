@@ -8,6 +8,7 @@ export const Header = styled.header`
     border-bottom: 5px solid ${props => props.theme.secondary};
     color: ${props => props.theme.textLight};
     z-index: 999;
+    
     img {
         height: 100%;
     }

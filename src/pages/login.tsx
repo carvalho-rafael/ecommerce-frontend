@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Banner, FormContainer, Main } from '../styles/pages/login';
 import { InputBlock, SubmitButton, TextInput } from '../styles/form';
 
+import logo from '../assets/logo.png'
 export default function Login() {
     const { authenticated, user, handleLogin } = useContext(Context)
     console.log(authenticated, user);
@@ -21,12 +22,12 @@ export default function Login() {
         <Main>
             <Banner>
                 <Link to="/">
+                    <img src={logo} alt="Eshop Logo"/>
                 </Link>
-                <h1>Leve felicidade para o mundo</h1>
-                <p>Visite orfanatos e mude o dia de muitas crianças.</p>
+                <p>PEÇAS QUE COMBINAM COM O SEU ESTILO.</p>
             </Banner>
             <FormContainer>
-                <h1>Login</h1>
+                <h1>EShop</h1>
                 <form onSubmit={handleSubmit}>
                     <InputBlock>
                         <label htmlFor="email">Email</label>

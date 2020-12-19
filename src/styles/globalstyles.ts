@@ -2,8 +2,9 @@ import styled, { createGlobalStyle } from 'styled-components'
 import { device } from './breackpoints'
 
 export default createGlobalStyle`
-    body, html {
+    html, body {
         margin: 0;
+        padding: 0;
     }
     body {
         background: ${props => props.theme.background};
@@ -22,23 +23,23 @@ export default createGlobalStyle`
     }
     a {
         text-decoration: none;
-        color: ${props => props.theme.textDark}
+        color: inherit;
     }
 `
 export const Container = styled.div`
-    margin: auto;
+    margin:auto;
     position: relative;
     width: 100%;
     height: inherit;
 
     @media ${device.laptop} {
-        width: 900px;
+        width: calc(900px - (100vw - 100%));
     }
     @media ${device.laptopL} {
-        width: 1200px;
+        width: calc(1200px - (100vw - 100%));
     }
     @media ${device.desktop} {
-        width: 2100px;
+        width: calc(2100px - (100vw - 100%));
     }
 `
 export const LargeContainer = styled.div`
@@ -48,12 +49,12 @@ export const LargeContainer = styled.div`
     height: inherit;
 
     @media ${device.laptop} {
-        width: 1000px;
+        width: calc(1000px - (100vw - 100%));
     }
     @media ${device.laptopL} {
-        width: 1300px;
+        width: calc(1300px - (100vw - 100%));
     }
     @media ${device.desktop} {
-        width: 2300px;
+        width: calc(2300px - (100vw - 100%));
     }
 `

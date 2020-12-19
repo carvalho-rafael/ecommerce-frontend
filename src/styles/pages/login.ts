@@ -1,21 +1,32 @@
 import styled from 'styled-components';
+import { device } from '../breackpoints';
 
 export const Main = styled.main`
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: ${props => props.theme.primary};
+
+    @media ${device.tablet} {
+        flex-direction: row;
+        height: 100vh;
+    }
 `
 export const Banner = styled.aside`
-    flex: 1;
+    flex: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
     color: ${props => props.theme.textLight};
+
+    @media ${device.tablet} {
+        flex: 1;
+    }
 `
 export const FormContainer = styled.div`
     flex: 1;

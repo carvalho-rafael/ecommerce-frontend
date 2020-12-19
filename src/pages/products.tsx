@@ -49,7 +49,7 @@ export default function Products() {
                         <ProductCard key={index} imgUrl={product.imgUrl}></ProductCard>
                     ))}
                 </Main>
-            </Container>
+            </Container>            
         </>
     )
 }
