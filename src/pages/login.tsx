@@ -3,8 +3,7 @@ import React, { FormEvent, useState, useContext } from 'react'
 import { Context } from '../context/AuthContext'
 import { Link } from 'react-router-dom';
 import { Banner, FormContainer, Main } from '../styles/pages/login';
-import { InputBlock, TextInput } from '../styles/form';
-import { LargeContainer } from '../styles/globalstyles';
+import { InputBlock, SubmitButton, TextInput } from '../styles/form';
 
 export default function Login() {
     const { authenticated, user, handleLogin } = useContext(Context)
@@ -35,11 +34,11 @@ export default function Login() {
                     </InputBlock>
                     <InputBlock>
                         <label htmlFor="password">Password</label>
-                        <TextInput id="password" type="text" value={password} onChange={event => setPassword(event.target.value)} />
+                        <TextInput id="password" type="password" value={password} onChange={event => setPassword(event.target.value)} />
                     </InputBlock>
-                    <button className="confirm-button" type="submit">
+                    <SubmitButton type="submit">
                         Login
-                </button>
+                    </SubmitButton>
                 </form>
             </FormContainer>
         </Main>

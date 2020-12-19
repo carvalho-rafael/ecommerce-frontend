@@ -18,3 +18,18 @@ export const TextInput = styled.input`
     outline: none;
     color: #5C8599;
 `
+export const SubmitButton = styled.button`
+    width: 100%;
+    max-width: 300px;
+    padding: 1.5em 2em;
+    margin: auto;
+    margin-top: 1rem;
+
+    background: ${props => props.theme.primary};
+    color: ${props => props.theme.textLight};
+    border-color: ${props => props.theme.primaryDark};
+    border-radius: 5px;
+
+    font-weight: bold;
+    cursor: pointer;
+`
