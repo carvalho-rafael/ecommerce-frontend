@@ -6,7 +6,7 @@ export const Main = styled.main`
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(329.54deg, #29B6D1 0%, #00C7C7 100%);
+    background: ${props => props.theme.primary};
 `
 export const Banner = styled.aside`
     flex: 1;
@@ -15,6 +15,7 @@ export const Banner = styled.aside`
     justify-content: center;
     align-items: center;
     padding: 20px;
+    color: ${props => props.theme.textLight};
 
 `
 export const FormContainer = styled.div`
@@ -23,8 +24,7 @@ export const FormContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #4D6F80;
-    background: ${props => props.theme.primary};
+    background: ${props => props.theme.background};
     width: 100%;
     height: 100%;
     padding: 20px;

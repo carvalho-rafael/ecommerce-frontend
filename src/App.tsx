@@ -7,12 +7,12 @@ import { Theme } from "./styles/theme";
 function App() {
   return (
     <>
-      <GlobalStyles />
-      <AuthProvider>
-        <ThemeProvider theme={Theme}>
+      <ThemeProvider theme={Theme}>
+        <GlobalStyles />
+        <AuthProvider>
           <Routes />
-        </ThemeProvider>
-      </AuthProvider>
+        </AuthProvider>
+      </ThemeProvider>
     </>
   );
 }

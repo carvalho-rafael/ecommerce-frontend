@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-    width: 100%;
+    width: calc(100% - 300px);
     display: flex;
     flex-wrap: wrap;
-    padding-left: 300px;
     padding-bottom: 100px;
-    background: blueviolet;
 `

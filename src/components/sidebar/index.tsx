@@ -3,17 +3,21 @@ import { Aside } from "./styles";
 export default function Sidebar() {
     return (
         <Aside>
-            <h2>Categorias</h2 >
             <h3>Masculino</h3>
-            <p>Calças</p>
-            <p>Blusas</p>
+            <ul>
+                <li>Calças</li>
+                <li>blusas</li>
+            </ul>
             <h3>Feminino</h3>
-            <p>Calças</p>
-            <p>Blusas</p>
+            <ul>
+                <li>Calças</li>
+                <li>blusas</li>
+            </ul>
             <h3>Agenero</h3>
-            <p>Calças</p>
-            <p>Blusas</p>
-            <p>Mochilas</p>
+            <ul>
+                <li>Bolsas</li>
+                <li>Calçados</li>
+            </ul>
         </Aside>
     )
 }

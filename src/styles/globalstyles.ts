@@ -5,9 +5,16 @@ export default createGlobalStyle`
     body, html {
         margin: 0;
     }
-
+    body {
+        background: ${props => props.theme.background};
+        color: ${props => props.theme.textDark}
+    }
     * {
         box-sizing: border-box;
+    }
+    ol, ul {
+	    list-style: none;
+        margin-top: 0;
     }
 `
 export const Container = styled.div`
