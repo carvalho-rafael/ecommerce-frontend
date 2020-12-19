@@ -16,7 +16,6 @@ export const Banner = styled.aside`
     align-items: center;
     padding: 20px;
     color: ${props => props.theme.textLight};
-
 `
 export const FormContainer = styled.div`
     flex: 1;
@@ -24,7 +23,8 @@ export const FormContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: ${props => props.theme.background};
+    background: #ffffff;
+    color: ${props => props.theme.primaryDark};
     width: 100%;
     height: 100%;
     padding: 20px;

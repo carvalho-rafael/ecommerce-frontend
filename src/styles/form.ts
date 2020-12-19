@@ -21,15 +21,16 @@ export const TextInput = styled.input`
 export const SubmitButton = styled.button`
     width: 100%;
     max-width: 300px;
-    padding: 1.5em 2em;
+    padding: 1rem 2rem;
     margin: auto;
     margin-top: 1rem;
 
-    background: ${props => props.theme.primary};
+    background: ${props => props.theme.secondaryDark};
     color: ${props => props.theme.textLight};
-    border-color: ${props => props.theme.primaryDark};
+    border-color: ${props => props.theme.secondary};
     border-radius: 5px;
 
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
 `

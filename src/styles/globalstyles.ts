@@ -7,7 +7,10 @@ export default createGlobalStyle`
     }
     body {
         background: ${props => props.theme.background};
-        color: ${props => props.theme.textDark}
+        color: ${props => props.theme.textDark};
+
+        font-family: 'Oxygen', sans-serif;
+        font-weight: lighter;
     }
     * {
         box-sizing: border-box;

@@ -13,7 +13,7 @@ export const Aside = styled.aside`
     a {
         display: block;
         width: 100%;
-        font-size: 24px;
+        font-size: 18px;
         padding: .5rem 0;
         padding-left: 1rem;
         border-radius: 5px;

@@ -8,5 +8,7 @@ export const Main = styled.main`
 
     h1 {
         width: 100%;
+
+        color:${props => props.theme.text}
     }
 `
