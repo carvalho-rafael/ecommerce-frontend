@@ -8,6 +8,7 @@ import { Context } from '../context/AuthContext'
 
 import history from './history'
 import Products from '../pages/products';
+import Dashboard from '../pages/dashboard';
 
 interface CustomRouteI {
     isPrivate?: boolean,
@@ -42,6 +43,11 @@ function Routes() {
                 <CustomRoute path="/" component={Home} exact />
                 <CustomRoute path="/login" component={Login} />
                 <CustomRoute path="/categoria/:id" component={Products} />
+
+                <CustomRoute path="/dashboard" component={Dashboard} exact />
+                <CustomRoute path="/dashboard/products" component={Dashboard} />
+                <CustomRoute path="/dashboard/categories" component={Dashboard} />
+                <CustomRoute path="/dashboard/settings" component={Dashboard} />
             </Switch>
         </Router>
     )

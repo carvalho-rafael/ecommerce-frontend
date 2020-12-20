@@ -2,7 +2,7 @@ import { Header, HeaderContainer } from "./styles";
 import logo from '../../assets/logo.png';
 
 import { Link } from "react-router-dom";
-import UserStatus from "./userStatus";
+import UserStatus from "../userStatus";
 
 export default function Navbar() {
     return (

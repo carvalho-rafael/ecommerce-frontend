@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link } from "react-router-dom";
 
 import { Context } from '../../context/AuthContext'
 import { useContext } from "react";
 
-import { UserStatusContainer } from './userStatusStyles'
+import { UserStatusContainer } from './styles'
 
 export default function UserStatus() {
     const { authenticated, user, handleLogout } = useContext(Context);
@@ -12,8 +13,8 @@ export default function UserStatus() {
         <UserStatusContainer>
             { authenticated ? (
                 <>
-                    <p>Welcome, {user.name}!</p>
-                    <span onClick={handleLogout}> Logout </span>
+                    <span>Welcome, {user.name}!</span>
+                    <a onClick={handleLogout}> Logout </a>
                 </>
             ) : (
                     <Link to="/login"> Login </Link>
