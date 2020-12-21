@@ -14,10 +14,14 @@ export default function UserStatus() {
             { authenticated ? (
                 <>
                     <span>Welcome, {user.name}!</span>
-                    <a onClick={handleLogout}> Logout </a>
+                    <button onClick={handleLogout}>
+                        Logout
+                    </button>
                 </>
             ) : (
-                    <Link to="/login"> Login </Link>
+                    <button>
+                        <Link to="/login"> Login </Link>
+                    </button>
                 )}
         </UserStatusContainer>
 

@@ -7,6 +7,13 @@ export const UserStatusContainer = styled.div`
     align-items: flex-end;
     padding: 1rem;
     height: inherit;
-    color: ${props => props.theme.textLight}
+    color: ${props => props.theme.textLight};
 
+    button {
+        padding: 5px;
+        margin-top: 5px;
+        background: ${props => props.theme.primaryDark};
+        color: ${props => props.theme.textLight};
+        cursor: pointer;
+    }
 `

@@ -3,6 +3,7 @@ import logo from '../../assets/logo.png';
 
 import { Link } from "react-router-dom";
 import UserStatus from "../userStatus";
+import Cart from "../cart";
 
 export default function Navbar() {
     return (
@@ -13,7 +14,10 @@ export default function Navbar() {
                         <img src={logo} alt="logo" />
                     </Link>
                 </div>
-                <UserStatus />
+                <nav>
+                    <Cart />
+                    <UserStatus />
+                </nav>
             </HeaderContainer>
         </Header>
     )

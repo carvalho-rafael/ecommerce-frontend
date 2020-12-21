@@ -17,4 +17,10 @@ export const HeaderContainer = styled(LargeContainer)`
     display: flex;
     justify-content: space-between;
     padding: 0 1rem;
+
+    nav {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
 `
