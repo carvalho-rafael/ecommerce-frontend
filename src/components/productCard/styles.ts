@@ -17,21 +17,24 @@ export const Card = styled.div`
     footer span:first-child {
         font-size: 20px;
     }
-    footer button {
-        display: block;
-        width: max-content;
-        padding: .5rem 1rem;
-        margin-left: auto;
-        background: ${props => props.theme.secondaryDark};
-        border: none;
-        color: ${props => props.theme.textLight};
+`
+export const AddItemButton = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70px;
+    height: 40px;
+    padding: .5rem 1rem;
+    margin-left: auto;
+    background: ${props => props.theme.secondaryDark};
+    border: none;
+    color: ${props => props.theme.textLight};
 
-        font-weight: bold;
-        cursor: pointer;
+    font-weight: bold;
+    cursor: pointer;
 
-        &:hover {
-            background: ${props => props.theme.textDark};
-            transition: .2s linear all;
-        }
+    &:hover {
+        background: ${props => props.theme.textDark};
+        transition: .2s linear all;
     }
 `

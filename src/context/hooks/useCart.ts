@@ -18,7 +18,7 @@ export default function useCart() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const products = localStorage.getItem('products')
+        const products = sessionStorage.getItem('products')
 
         if (products) {
             setProducts(JSON.parse(products))
@@ -28,18 +28,23 @@ export default function useCart() {
     }, [])
 
     useEffect(() => {
-        localStorage.setItem('products', JSON.stringify(products));
+        sessionStorage.setItem('products', JSON.stringify(products));
         let total = 0;
         products.forEach(product => {
-            total+=product.price
+            total += product.price
         })
         setTotal(total)
     }, [products])
 
-    function addItem(product: IProduct) {
-
-        setProducts([product, ...products]);
-        localStorage.setItem('products', JSON.stringify(products));
+    async function addItem(product: IProduct): Promise<boolean> {
+        const result: Promise<boolean> = new Promise(resolve => {
+            setTimeout(() => {
+                setProducts((prevState) => [product, ...prevState]);
+                sessionStorage.setItem('products', JSON.stringify(products));
+                resolve(true)
+            }, 1000);
+        });
+        return await result;
     }
 
     function removeItem(product: IProduct) {
@@ -47,7 +52,7 @@ export default function useCart() {
         const index = productsCopy.indexOf(product);
         productsCopy.splice(index, 1);
         setProducts([...productsCopy]);
-        localStorage.setItem('products', JSON.stringify(productsCopy));
+        sessionStorage.setItem('products', JSON.stringify(productsCopy));
     }
 
     return { products, total, addItem, removeItem, loading }

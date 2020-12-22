@@ -6,7 +6,7 @@ const CartContext = createContext({} as ICartContext);
 interface ICartContext {
     products: any
     total: number
-    addItem: (product: IProduct) => void
+    addItem: (product: IProduct) => Promise<boolean>
     removeItem: (product: IProduct) => void
     loading: boolean
 }

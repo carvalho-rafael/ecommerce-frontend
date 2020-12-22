@@ -32,8 +32,8 @@ export default function Cart() {
                     </li>
                 ))}
                 <Link to='/login'>
-                    Total: R$ {total} <br/>
-                    Checkout
+                    Total: R$ {total} <br />
+                   Checkout
                 </Link>
             </CartList>
         </CartContainer>
