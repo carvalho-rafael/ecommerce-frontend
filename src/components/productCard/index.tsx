@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 
 import example from '../../assets/bag-1.jpg'
+import { FiPlus, FiShoppingCart } from "react-icons/fi";
 
 export default function ProductCard({ imgUrl }: any) {
 
@@ -12,9 +13,12 @@ export default function ProductCard({ imgUrl }: any) {
         <Card>
             <img src={imgUrl} alt="" />
             <footer>
-                <h3>R$ 300,00</h3>
-                <p>Nome do produto</p>
-                <button onClick={() => addItem({id: '50', name: 'noo', price: '989898', imgUrl: example})}>Add to cart</button>
+                <span>R$ 300,00</span> <br/>
+                <span>Nome do produto</span> <br/>
+                <button onClick={() => addItem({id: '50', name: 'noo', price: 10.99, imgUrl: example})}>
+                    <FiPlus size={18}/>
+                    <FiShoppingCart size={18}/>
+                </button>
             </footer>
         </Card>
     )

@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom'
 interface Product {
     id: string
     name: string
-    price: string
+    price: number
     imgUrl: string
 }
 
 export default function Cart() {
     const [active, setActive] = useState(false)
-    const { products } = useContext(CartContext)
+    const { products, total } = useContext(CartContext)
 
     return (
         <CartContainer>
@@ -32,7 +32,7 @@ export default function Cart() {
                     </li>
                 ))}
                 <Link to='/login'>
-                    Total: R$ 300,00 <br/>
+                    Total: R$ {total} <br/>
                     Checkout
                 </Link>
             </CartList>
