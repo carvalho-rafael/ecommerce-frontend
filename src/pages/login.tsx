@@ -1,13 +1,13 @@
 import React, { FormEvent, useState, useContext } from 'react'
 
-import { Context } from '../context/AuthContext'
+import { AuthContext } from '../context/AuthContext'
 import { Link } from 'react-router-dom';
 import { Banner, FormContainer, Main } from '../styles/pages/login';
 import { InputBlock, SubmitButton, TextInput } from '../styles/form';
 
 import logo from '../assets/logo.png'
 export default function Login() {
-    const { authenticated, user, handleLogin } = useContext(Context)
+    const { authenticated, user, handleLogin } = useContext(AuthContext)
     console.log(authenticated, user);
 
     const [email, setEmail] = useState('')

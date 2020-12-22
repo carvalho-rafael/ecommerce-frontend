@@ -4,7 +4,7 @@ import { Switch, Route, Router, Redirect } from 'react-router-dom'
 import Home from '../pages/home';
 import Login from '../pages/login';
 
-import { Context } from '../context/AuthContext'
+import { AuthContext } from '../context/AuthContext'
 
 import history from './history'
 import Products from '../pages/products';
@@ -19,7 +19,7 @@ interface CustomRouteI {
 }
 
 function CustomRoute({ isAdmin, isPrivate, ...rest }: CustomRouteI) {
-    const { loading, authenticated, user } = useContext(Context)
+    const { loading, authenticated, user } = useContext(AuthContext)
 
     if (loading) {
         return <p>Loading...</p>

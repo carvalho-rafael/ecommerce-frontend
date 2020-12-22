@@ -1,13 +1,12 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link } from "react-router-dom";
 
-import { Context } from '../../context/AuthContext'
+import { AuthContext } from '../../context/AuthContext'
 import { useContext } from "react";
 
 import { UserStatusContainer } from './styles'
 
 export default function UserStatus() {
-    const { authenticated, user, handleLogout } = useContext(Context);
+    const { authenticated, user, handleLogout } = useContext(AuthContext);
 
     return (
         <UserStatusContainer>

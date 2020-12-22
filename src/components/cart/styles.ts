@@ -28,14 +28,35 @@ export const CartButton = styled.div<ICard>`
 `
 export const CartList = styled.ul<ICard>`
     position: absolute;
+    max-height: 150px; 
     display: ${props => props.active ? 'block' : 'none'};
     right: 0px;
     top: 90px;
 
+    overflow-y: auto;
+
     li {
-        width: 300px;
+        display: flex;
+        height: 50px;
+        align-items: center;
+        width: 250px;
         padding: .5rem;
         background: ${props => props.theme.secondaryDark};
+        color: ${props => props.theme.textLight};
+        img {
+            height: 100%;
+            width: 30px;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+    }
+    a {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+
+        background: ${props => props.theme.textDark};
         color: ${props => props.theme.textLight};
     }
 `
