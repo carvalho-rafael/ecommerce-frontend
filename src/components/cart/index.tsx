@@ -1,12 +1,12 @@
 import { CartContainer, CartButton, CartList } from './styles'
-import { FiShoppingCart } from 'react-icons/fi'
+import { FiShoppingCart, FiTrash } from 'react-icons/fi'
 import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 
 export default function Cart() {
     const [active, setActive] = useState(false)
-    const { products, total } = useContext(CartContext)
+    const { products, total, removeItem } = useContext(CartContext)
 
     return (
         <CartContainer>
@@ -18,17 +18,26 @@ export default function Cart() {
             <CartList active={active}>
                 {products?.map((product) => (
                     <li key={product.id}>
-                        <img src={product.imgUrl} alt="" />
                         <div>
-                            {product.name} <br />
-                        R$ {product.price}
+                            <img src={product.imgUrl} alt="" />
+                            <div>
+                                {product.name} <br />
+                                R$ {product.price}
+                            </div>
                         </div>
+                        <button>
+                            <FiTrash onClick={() => removeItem(product)} size={18} />
+                        </button>
                     </li>
                 ))}
-                <Link to='/login'>
-                    Total: R$ {total} <br />
-                   Checkout
-                </Link>
+                {products.length > 0 ? (
+                    <Link to='/login'>
+                        Total: R$ {total} <br />
+                        Checkout
+                    </Link>
+                ) : (
+                    <p>Nenhum produto adicionado</p>
+                )}
             </CartList>
         </CartContainer>
     )

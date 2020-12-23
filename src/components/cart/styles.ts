@@ -47,24 +47,44 @@ export const CartList = styled.ul<ICard>`
         display: flex;
         height: 50px;
         align-items: center;
+        justify-content:  space-between;
         width: 250px;
         padding: .5rem;
         background: ${props => props.theme.secondaryDark};
         color: ${props => props.theme.textLight};
+        div {
+            display: inline-block;
+        }
         img {
             height: 100%;
             width: 30px;
             margin-right: 1rem;
             object-fit: cover;
         }
+        button {
+            background: transparent;
+            color: ${props => props.theme.textLight};
+            border: none;
+            cursor: pointer;
+        }
     }
     a {
         display: block;
-        width: 100%;
+        width: 250px;
         padding: 1rem;
         text-align: center;
 
         background: ${props => props.theme.textDark};
         color: ${props => props.theme.textLight};
+    }
+    p {
+        display: block;
+        width: 250px;
+        padding: 1rem;
+        margin: 0px;
+        text-align: center;
+
+        background: ${props => props.theme.textLight};
+        color: ${props => props.theme.textDark};
     }
 `
