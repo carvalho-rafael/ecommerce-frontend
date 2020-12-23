@@ -16,8 +16,8 @@ export default function Cart() {
                 <span>{products?.length}</span>
             </CartButton>
             <CartList active={active}>
-                {products?.map((product) => (
-                    <li key={product.id}>
+                {products?.map((product, index) => (
+                    <li key={index}>
                         <div>
                             <img src={product.imgUrl} alt="" />
                             <div>
@@ -31,7 +31,7 @@ export default function Cart() {
                     </li>
                 ))}
                 {products.length > 0 ? (
-                    <Link to='/login'>
+                    <Link to='/checkout'>
                         Total: R$ {total} <br />
                         Checkout
                     </Link>

@@ -25,6 +25,10 @@ export default createGlobalStyle`
         text-decoration: none;
         color: inherit;
     }
+    button {
+        font-family: 'Oxygen', sans-serif;
+        font-weight: lighter;
+    }
 `
 export const Container = styled.div`
     margin:auto;
