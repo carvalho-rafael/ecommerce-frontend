@@ -4,13 +4,6 @@ import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 
-interface Product {
-    id: string
-    name: string
-    price: number
-    imgUrl: string
-}
-
 export default function Cart() {
     const [active, setActive] = useState(false)
     const { products, total } = useContext(CartContext)
@@ -20,10 +13,11 @@ export default function Cart() {
             <CartButton active={active} onClick={() => setActive(!active)}>
                 <FiShoppingCart size={24} />
                 <h3>cart</h3>
+                <span>{products?.length}</span>
             </CartButton>
             <CartList active={active}>
-                {products?.map((product: Product) => (
-                    <li>
+                {products?.map((product) => (
+                    <li key={product.id}>
                         <img src={product.imgUrl} alt="" />
                         <div>
                             {product.name} <br />

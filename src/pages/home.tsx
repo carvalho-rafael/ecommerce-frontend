@@ -7,19 +7,26 @@ import { Container } from "../styles/globalstyles"
 import ProductCard from "../components/productCard";
 
 import mShirt from '../assets/white-shirt.jpg'
-import wPant from '../assets/women-pant.jpg'
 import bag from '../assets/bag-1.jpg'
-
-interface Products {
-    imgUrl: string
-}
-
+import { IProduct } from "../interfaces/product";
 
 export default function Home() {
-    const [products, setProducts] = useState<Products[]>();
+    const [products, setProducts] = useState<IProduct[]>();
 
     useEffect(() => {
-        setProducts([{ imgUrl: mShirt }, { imgUrl: wPant }, { imgUrl: bag }, { imgUrl: wPant },]);
+        setProducts([{
+            id: '20',
+            name: 'blusa',
+            price: 30.55,
+            imgUrl: mShirt
+        },
+        {
+            id: '50',
+            name: 'bolsa',
+            price: 110.00,
+            imgUrl: bag
+        }]);
+        return
     }, [])
 
     return (
@@ -30,7 +37,7 @@ export default function Home() {
                 <Main>
                     <h1>Lançamentos</h1>
                     {products?.map((product, index) => (
-                        <ProductCard key={index} imgUrl={product.imgUrl}></ProductCard>
+                        <ProductCard key={index} product={product}></ProductCard>
                     ))}
                 </Main>
             </Container>

@@ -1,11 +1,5 @@
 import { useEffect, useState } from 'react'
-
-export interface IProduct {
-    id: string
-    name: string
-    price: number
-    imgUrl: string
-}
+import { IProduct } from '../../interfaces/product';
 
 export default function useCart() {
     const [products, setProducts] = useState<IProduct[]>([{
@@ -33,7 +27,7 @@ export default function useCart() {
         products.forEach(product => {
             total += product.price
         })
-        setTotal(total)
+        setTotal(parseFloat(total.toFixed(2)))
     }, [products])
 
     async function addItem(product: IProduct): Promise<boolean> {

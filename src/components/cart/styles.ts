@@ -25,6 +25,14 @@ export const CartButton = styled.div<ICard>`
     h3 {
         margin-left: .5rem;
     }
+    span{
+        position: absolute;
+        top: 18px;
+        left: 18px;
+
+        font-weight: bold;
+        color: ${props => props.theme.secondary};
+    }
 `
 export const CartList = styled.ul<ICard>`
     position: absolute;

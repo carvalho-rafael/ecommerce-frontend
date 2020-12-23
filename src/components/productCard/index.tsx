@@ -2,27 +2,31 @@ import { Card, AddItemButton } from "./styles";
 import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 
-import example from '../../assets/bag-1.jpg'
 import { FiLoader, FiPlus, FiShoppingCart } from "react-icons/fi";
+import { IProduct } from "../../interfaces/product";
 
-export default function ProductCard({ imgUrl }: any) {
+interface IProps {
+    product: IProduct
+}
+
+export default function ProductCard({ product }: IProps) {
     const [adding, setAdding] = useState(false)
     const { addItem } = useContext(CartContext)
 
     async function handleAddItem() {
         setAdding(true);
-        const result = await addItem({ id: '50', name: 'noo', price: 10.99, imgUrl: example });
+        const result = await addItem(product);
         if (result) {
             setAdding(false)
         }
     }
-    
+
     return (
         <Card>
-            <img src={imgUrl} alt="" />
+            <img src={product.imgUrl} alt="" />
             <footer>
-                <span>R$ 300,00</span> <br />
-                <span>Nome do produto</span> <br />
+                <span>R$ {product.price}</span> <br />
+                <span>{product.name}</span> <br />
                 <AddItemButton disabled={adding} onClick={handleAddItem}>
                     {adding ? (<FiLoader />) :
                         (<>
