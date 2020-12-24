@@ -2,12 +2,7 @@ import { useEffect, useState } from 'react'
 import { IProduct } from '../../interfaces/product';
 
 export default function useCart() {
-    const [products, setProducts] = useState<IProduct[]>([{
-        id: 'rafael',
-        name: 'camiseta',
-        price: 89.90,
-        imgUrl: ''
-    }]);
+    const [products, setProducts] = useState<IProduct[]>([]);
     const [total, setTotal] = useState(0)
     const [loading, setLoading] = useState(true);
 

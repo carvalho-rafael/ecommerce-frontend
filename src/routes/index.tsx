@@ -11,6 +11,7 @@ import Products from '../pages/products';
 import Dashboard from '../pages/dashboard';
 import Checkout from '../pages/checkout';
 import Payment from '../pages/payment';
+import Address from '../pages/address';
 
 interface CustomRouteI {
     isPrivate?: boolean,
@@ -52,6 +53,7 @@ function Routes() {
                 <CustomRoute path="/dashboard/settings" component={Dashboard} />
 
                 <CustomRoute path="/checkout" component={Checkout} />
+                <CustomRoute path="/address" component={Address} />
                 <CustomRoute path="/payment" component={Payment} />
             </Switch>
         </Router>

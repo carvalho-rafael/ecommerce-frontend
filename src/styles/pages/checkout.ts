@@ -5,6 +5,10 @@ export const CartContainer = styled.div`
     height: 100%;
     position: relative;
     margin-top: 1rem;
+
+    h2 {
+        text-align: center;
+    }
 `
 export const CartListItem = styled.ul`
 
@@ -50,9 +54,8 @@ export const ProceedButton = styled(Link)`
     margin-left: auto;
     text-align: center;
 
-    background: ${props => props.theme.secondaryDark};
+    background: ${props => props.theme.primaryDark};
     color: ${props => props.theme.textLight};
-    border-color: ${props => props.theme.secondary};
     border-radius: 5px;
 
     font-weight: bold;
@@ -61,7 +64,7 @@ export const ProceedButton = styled(Link)`
         margin-left: 5px;
     }
     &:hover {
-        background: ${props => props.theme.primary};
-        transition: .2s all linear;
+        background: ${props => props.theme.secondaryDark};
+        transition: .1s all linear;
     }
 `

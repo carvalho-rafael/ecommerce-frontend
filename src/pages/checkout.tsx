@@ -32,9 +32,10 @@ export default function Checkout() {
                             </CartListItem>
                         ))}
                     </ul>
+                    <h2> Total: R$ {total} </h2>
                     {products.length > 0 ? (
-                        <ProceedButton to='/payment'>
-                            Total: R$ {total} Prosseguir
+                        <ProceedButton to='/address'>
+                            Prosseguir
                             <span><FiArrowRightCircle size={24} /></span>
                         </ProceedButton>
                     ) : (

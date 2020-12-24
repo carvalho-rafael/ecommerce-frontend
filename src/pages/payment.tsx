@@ -6,9 +6,11 @@ import { Banner, FormContainer, Main } from '../styles/pages/login';
 import { InputBlock, SubmitButton, TextInput } from '../styles/form';
 
 import logo from '../assets/logo.png'
+import { AddressContext } from '../context/AddressContext';
 
 export default function Payment() {
     const { authenticated, user, handleLogin } = useContext(AuthContext)
+    const { address } = useContext(AddressContext)
     console.log(authenticated, user);
 
     const [email, setEmail] = useState('')
@@ -22,7 +24,7 @@ export default function Payment() {
     return (
         <Main>
             <FormContainer>
-                <h1>Payment page</h1>
+                <h1>Payment page {address?.name}</h1>
                 <form onSubmit={handleSubmit}>
                     <InputBlock>
                         <label htmlFor="email">Email</label>
