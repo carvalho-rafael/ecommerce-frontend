@@ -1,44 +1,75 @@
-import React, { FormEvent, useState, useContext } from 'react'
+import React, { useContext } from 'react'
 
 import { AuthContext } from '../context/AuthContext'
-import { Link } from 'react-router-dom';
-import { Banner, FormContainer, Main } from '../styles/pages/login';
-import { InputBlock, SubmitButton, TextInput } from '../styles/form';
+import { OrderContainer, PaymentContainer, ShippingAddress, CartList, CartListItem } from '../styles/pages/payment';
 
-import logo from '../assets/logo.png'
 import { AddressContext } from '../context/AddressContext';
+import Navbar from '../components/navbar';
+import { CartContext } from '../context/CartContext';
+import { Container } from '../styles/globalstyles';
+
+import { PayPalButton } from "react-paypal-button-v2";
 
 export default function Payment() {
-    const { authenticated, user, handleLogin } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const { address } = useContext(AddressContext)
-    console.log(authenticated, user);
-
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
-    function handleSubmit(event: FormEvent) {
-        event.preventDefault()
-        handleLogin(email, password)
-    }
+    const { products, total } = useContext(CartContext)
 
     return (
-        <Main>
-            <FormContainer>
-                <h1>Payment page {address?.name}</h1>
-                <form onSubmit={handleSubmit}>
-                    <InputBlock>
-                        <label htmlFor="email">Email</label>
-                        <TextInput id="name" type="text" value={email} onChange={event => setEmail(event.target.value)} />
-                    </InputBlock>
-                    <InputBlock>
-                        <label htmlFor="password">Password</label>
-                        <TextInput id="password" type="password" value={password} onChange={event => setPassword(event.target.value)} />
-                    </InputBlock>
-                    <SubmitButton type="submit">
-                        Login
-                    </SubmitButton>
-                </form>
-            </FormContainer>
-        </Main>
+        <>
+            <Navbar />
+            <Container>
+                <OrderContainer>
+                    <ShippingAddress>
+                        <h4>Endereço: </h4>
+                        <p>{address?.address}, {address?.district}, {address?.city}, {address?.state}</p>
+                    </ShippingAddress>
+                    <CartList >
+                        <h4>Produtos: </h4>
+                        {products?.map((product, index) => (
+                            <CartListItem key={index}>
+                                <img src={product.imgUrl} alt="" />
+                                <div>
+                                    <span><b>{product.name}</b>, My  ...</span>
+                                    <p>R$ {product.price}</p>
+                                </div>
+                            </CartListItem>
+                        ))}
+                    </CartList>
+                </OrderContainer>
+                <PaymentContainer>
+                    <h3>Total: R${total}</h3>
+                    <PayPalButton
+                        createOrder={(data: any, actions: any) => {
+                            return fetch('http://localhost:3003/createOrder', {
+                                method: 'post'
+                            }).then(function (res) {
+                                return res.json();
+                            }).then(function (orderData) {
+                                return orderData.id;
+                            });
+                        }}
+                        onApprove={(data: any, actions: any) => {
+                            // Capture the funds from the transaction
+                            return actions.order.capture().then(function (details: any) {
+                                // Show a success message to your buyer
+                                alert("Transaction completed by " + details.payer.name.given_name);
+                                // OPTIONAL: Call your server to save the transaction
+                                return fetch("/paypal-transaction-complete", {
+                                    method: "post",
+                                    body: JSON.stringify({
+                                        orderID: data.orderID
+                                    })
+                                });
+                            });
+                        }}
+                        options={{
+                            clientId: 'sb',
+                            currency: 'BRL'
+                        }}
+                    />
+                </PaymentContainer>
+            </Container>
+        </>
     )
 }
