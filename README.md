@@ -1,11 +1,15 @@
-# Eshop
+# Eshop Frontend
+In this project was implemented an ecommerce with shopping cart and payment integration (Paypal). 
 
-This is a ecommerce project.
+Link  to the backend API: (https://github.com/carvalho-rafael/ecommerce-backend).
 
-Link  to backend api of this project: (https://github.com/carvalho-rafael/ecommerce-backend).
+## Tecnologies
+- React
+- Typescript
+- Styled-components
 
 ## Screenshots
 
 <img src="./docs/home.jpg" alt="home-page" width="600px"/>
-<img src="./docs/login.png" alt="home-page" width="50%"/>
-<img src="./docs/payment.png" alt="home-page" width="50%"/>
+<img src="./docs/login.png" alt="login-page" width="600px"/>
+<img src="./docs/payment.png" alt="payment-page" width="600px"/>
