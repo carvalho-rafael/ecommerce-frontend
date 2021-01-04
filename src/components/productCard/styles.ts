@@ -9,10 +9,15 @@ export const Card = styled.div`
     margin-right: auto;
     margin-top: 15px;
 
+    &:hover {
+        box-shadow: 1px 1px 4px gray;
+    }
+
     img {
         width: 100%;
         height: 350px;
         object-fit: cover;
+        cursor: pointer;
     }
     footer span:first-child {
         font-size: 20px;

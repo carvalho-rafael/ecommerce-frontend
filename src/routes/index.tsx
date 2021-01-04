@@ -12,6 +12,7 @@ import Dashboard from '../pages/dashboard';
 import Checkout from '../pages/checkout';
 import Payment from '../pages/payment';
 import Address from '../pages/address';
+import ProductDetail from '../pages/productDetail';
 
 interface CustomRouteI {
     isPrivate?: boolean,
@@ -46,6 +47,7 @@ function Routes() {
                 <CustomRoute path="/" component={Home} exact />
                 <CustomRoute path="/login" component={Login} />
                 <CustomRoute path="/categoria/:id" component={Products} />
+                <CustomRoute path="/product/:id" component={ProductDetail} />
 
                 <CustomRoute path="/dashboard" component={Dashboard} exact />
                 <CustomRoute path="/dashboard/products" component={Dashboard} />

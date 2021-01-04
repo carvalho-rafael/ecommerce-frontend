@@ -4,6 +4,7 @@ import { CartContext } from '../../context/CartContext'
 
 import { FiLoader, FiPlus, FiShoppingCart } from "react-icons/fi";
 import { IProduct } from "../../interfaces/product";
+import history from "../../routes/history";
 
 interface IProps {
     product: IProduct
@@ -21,9 +22,16 @@ export default function ProductCard({ product }: IProps) {
         }
     }
 
+    function handleCardClick() {
+        history.push('/product/3')
+    }
+
     return (
         <Card>
-            <img src={product.imgUrl} alt="" />
+            <img
+                onClick={handleCardClick}
+                src={product.imgUrl} alt=""
+            />
             <footer>
                 <span>R$ {product.price}</span> <br />
                 <span>{product.name}</span> <br />

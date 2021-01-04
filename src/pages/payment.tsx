@@ -9,6 +9,7 @@ import { CartContext } from '../context/CartContext';
 import { Container } from '../styles/globalstyles';
 
 import { PayPalButton } from "react-paypal-button-v2";
+import { FiBluetooth } from 'react-icons/fi';
 
 export default function Payment() {
     const { user } = useContext(AuthContext)
@@ -65,7 +66,8 @@ export default function Payment() {
                         }}
                         options={{
                             clientId: 'sb',
-                            currency: 'BRL'
+                            currency: 'BRL',
+                            locale: 'pt_BR',
                         }}
                     />
                 </PaymentContainer>

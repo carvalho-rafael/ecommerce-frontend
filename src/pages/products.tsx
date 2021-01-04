@@ -53,7 +53,7 @@ export default function Products() {
 
                     </header>
                     {products?.map((product, index) => (
-                        <ProductCard key={index} product={product}></ProductCard>
+                        <ProductCard product={product}></ProductCard>
                     ))}
                 </Main>
         </Container>            

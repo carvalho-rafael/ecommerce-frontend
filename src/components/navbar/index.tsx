@@ -10,7 +10,7 @@ export default function Navbar() {
         <Header>
             <HeaderContainer>
                 <div>
-                    <Link to="/login">
+                    <Link to="/">
                         <img src={logo} alt="logo" />
                     </Link>
                 </div>
