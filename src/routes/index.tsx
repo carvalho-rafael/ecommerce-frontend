@@ -54,9 +54,9 @@ function Routes() {
                 <CustomRoute path="/dashboard/categories" component={Dashboard} />
                 <CustomRoute path="/dashboard/settings" component={Dashboard} />
 
-                <CustomRoute path="/checkout" component={Checkout} />
-                <CustomRoute path="/address" component={Address} />
-                <CustomRoute path="/payment" component={Payment} />
+                <CustomRoute isPrivate path="/checkout" component={Checkout} />
+                <CustomRoute isPrivate path="/address" component={Address} />
+                <CustomRoute isPrivate path="/payment" component={Payment} />
             </Switch>
         </Router>
     )

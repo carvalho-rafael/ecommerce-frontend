@@ -29,23 +29,19 @@ export default function useAuth() {
     }, [])
 
     function handleLogin(email: string, password: string) {
-        //const data = { email, password }
+        const data = { email, password }
 
-        /*         api.post('login', data).then(response => {
-                    const { token, user } = response.data;
-         */
-        const user = {
-            name: 'rafael'
-        }
+        api.post('login', data).then(response => {
+            const { token, user } = response.data;
 
-        localStorage.setItem('token', JSON.stringify('token'));
-        localStorage.setItem('user', JSON.stringify(user));
-        setUser(user);
-        api.defaults.headers.Authorization = `Bearer ${'token'}`;
-        setAuthenticated(true);
-        history.push('/');
-/*         })
- */    }
+            localStorage.setItem('token', JSON.stringify(token));
+            localStorage.setItem('user', JSON.stringify(user));
+            setUser(user);
+            api.defaults.headers.Authorization = `Bearer ${'token'}`;
+            setAuthenticated(true);
+            history.goBack();
+        })
+    }
 
     function handleLogout() {
         setAuthenticated(false);

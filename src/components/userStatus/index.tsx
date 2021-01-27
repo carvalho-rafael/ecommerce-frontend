@@ -12,7 +12,7 @@ export default function UserStatus() {
         <UserStatusContainer>
             { authenticated ? (
                 <>
-                    <span>Welcome, {user.name}!</span>
+                    <span>Welcome, {user.email}!</span>
                     <button onClick={handleLogout}>
                         Logout
                     </button>
