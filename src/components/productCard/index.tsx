@@ -30,7 +30,7 @@ export default function ProductCard({ product }: IProps) {
         <Card>
             <img
                 onClick={handleCardClick}
-                src={product.imgUrl} alt=""
+                src={`http://localhost:3003/images/${product.image}`} alt=""
             />
             <footer>
                 <span>R$ {product.price}</span> <br />

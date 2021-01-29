@@ -23,10 +23,10 @@ export default function ProductDetail() {
 
     useEffect(() => {
         setProduct({
-            id: params.id,
+            _id: params.id,
             name: 'blusa',
             price: 30.55,
-            imgUrl: mShirt
+            image: mShirt
         })
     }, [params.id])
 
@@ -56,7 +56,7 @@ export default function ProductDetail() {
             <Container>
                 <ProductContainer>
                 <ProductInfo>
-                    <img src={product?.imgUrl} alt="" />
+                    <img src={product?.image} alt="" />
                     <p>{product?.name}</p>
                     <h2>Description</h2>
                 </ProductInfo>

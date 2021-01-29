@@ -9,7 +9,13 @@ import { CartContext } from '../context/CartContext';
 import { Container } from '../styles/globalstyles';
 
 import { PayPalButton } from "react-paypal-button-v2";
-import { FiBluetooth } from 'react-icons/fi';
+import api from '../services';
+
+interface IOrderResponse {
+    orderData: {
+        id: string
+    }
+}
 
 export default function Payment() {
     const { user } = useContext(AuthContext)
@@ -29,7 +35,7 @@ export default function Payment() {
                         <h4>Produtos: </h4>
                         {products?.map((product, index) => (
                             <CartListItem key={index}>
-                                <img src={product.imgUrl} alt="" />
+                                <img src={`http://localhost:3003/images/${product.image}`} alt="" />
                                 <div>
                                     <span><b>{product.name}</b>, My  ...</span>
                                     <p>R$ {product.price}</p>
@@ -42,12 +48,8 @@ export default function Payment() {
                     <h3>Total: R${total}</h3>
                     <PayPalButton
                         createOrder={(data: any, actions: any) => {
-                            return fetch('http://localhost:3003/createOrder', {
-                                method: 'post'
-                            }).then(function (res) {
-                                return res.json();
-                            }).then(function (orderData) {
-                                return orderData.id;
+                            return api.post('createOrder', { products }).then(response => {
+                                return response.data.orderData.id;
                             });
                         }}
                         onApprove={(data: any, actions: any) => {

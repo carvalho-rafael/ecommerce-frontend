@@ -15,16 +15,16 @@ export default function Home() {
 
     useEffect(() => {
         setProducts([{
-            id: '20',
+            _id: '20',
             name: 'blusa',
             price: 30.55,
-            imgUrl: mShirt
+            image: mShirt
         },
         {
-            id: '50',
+            _id: '50',
             name: 'bolsa',
             price: 110.00,
-            imgUrl: bag
+            image: bag
         }]);
         return
     }, [])

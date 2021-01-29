@@ -1,8 +1,7 @@
 import { CartContainer, CartListItem, ProceedButton } from '../styles/pages/checkout'
-import { FiArrowRight, FiArrowRightCircle, FiTrash } from 'react-icons/fi'
-import { useContext, useState } from 'react'
+import { FiArrowRightCircle, FiTrash } from 'react-icons/fi'
+import { useContext } from 'react'
 import { CartContext } from './../context/CartContext'
-import { Link } from 'react-router-dom'
 import Navbar from '../components/navbar'
 import { Container } from '../styles/globalstyles'
 
@@ -18,7 +17,7 @@ export default function Checkout() {
                         {products?.map((product, index) => (
                             <CartListItem key={index}>
                                 <div>
-                                    <img src={product.imgUrl} alt="" />
+                                    <img src={`http://localhost:3003/images/${product.image}`} alt="" />
                                     <div>
                                         {product.name} <br />
                                         R$ {product.price}

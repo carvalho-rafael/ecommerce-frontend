@@ -19,7 +19,7 @@ export default function Cart() {
                 {products?.map((product, index) => (
                     <li key={index}>
                         <div>
-                            <img src={product.imgUrl} alt="" />
+                            <img src={`http://localhost:3003/images/${product.image}`} alt="" />
                             <div>
                                 {product.name} <br />
                                 R$ {product.price}
@@ -36,8 +36,8 @@ export default function Cart() {
                         Checkout
                     </Link>
                 ) : (
-                    <p>Nenhum produto adicionado</p>
-                )}
+                        <p>Nenhum produto adicionado</p>
+                    )}
             </CartList>
         </CartContainer>
     )

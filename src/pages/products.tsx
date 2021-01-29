@@ -7,9 +7,8 @@ import { Main } from "../styles/pages/products";
 import { Container } from "../styles/globalstyles"
 import ProductCard from "../components/productCard";
 
-import mShirt from '../assets/white-shirt.jpg'
-import wPant from '../assets/women-pant.jpg'
 import { IProduct } from "../interfaces/product";
+import api from "../services";
 
 interface Params {
     id: string
@@ -20,21 +19,10 @@ export default function Products() {
     const params = useParams<Params>();
 
     useEffect(() => {
-        if (params.id === '2') {
-            setProducts([{
-                id: '20',
-                name: 'blusa',
-                price: 30.55,
-                imgUrl: mShirt
-            }]);
-            return
-        }
-        setProducts([{
-            id: '40',
-            name: 'short',
-            price: 45.50,
-            imgUrl: wPant
-        }]);
+        api.get(`products?category=${params.id}`).then(response => {
+            const products = response.data;
+            setProducts(products);
+        })
     }, [params.id])
 
     return (

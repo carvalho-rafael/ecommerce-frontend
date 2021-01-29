@@ -1,23 +1,29 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import api from "../../services";
 import { Aside } from "./styles";
 
+interface ICategory {
+    _id: number,
+    name: string
+    description: string
+}
+
 export default function Sidebar() {
+    const [categories, setCategories] = useState<ICategory[]>([]);
+    useEffect(() => {
+        api.get('product-category').then(response => {
+            const categories = response.data;
+            setCategories(categories);
+        })
+    }, [])
     return (
         <Aside>
-            <h3>Masculino</h3>
+            <h3>Categorias</h3>
             <ul>
-                <li><NavLink to={`/categoria/${2}`}>Blusas</NavLink></li>
-                <li>blusas</li>
-            </ul>
-            <h3>Feminino</h3>
-            <ul>
-                <li><NavLink to={`/categoria/${5}`}>Calças</NavLink></li>
-                <li>blusas</li>
-            </ul>
-            <h3>Agenero</h3>
-            <ul>
-                <li>Bolsas</li>
-                <li>Calçados</li>
+                {categories.map(category => (
+                    <li key={category._id}><NavLink to={`/category/${category._id}`}>{category.name}</NavLink></li>
+                ))}
             </ul>
         </Aside>
     )
